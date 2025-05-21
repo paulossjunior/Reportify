@@ -1,12 +1,21 @@
-# Reportify
+Reporfy — Turn GitHub data into powerful insights!
 
-**Turn Data into Actionable Markdown Reports**
+Reporfy is an advanced reporting tool that transforms GitHub project data into smart dashboards directly inside your repositories. All reports are generated in Markdown, making it lightweight, portable, and fully integrated into your GitHub workflows.
 
-Reportify is a lightweight and flexible tool designed to transform raw data into insightful, beautifully structured dashboards in Markdown format. Whether you're automating project summaries, visualizing analytics, or documenting team progress, Reportify helps you convert your data into readable, shareable reports that live right inside your repositories, wikis, or docs.
+✅ What Reporfy delivers:
 
-## Features
+📊 Productivity reports
 
-- 📊 Auto-generated dashboards with charts and tables  
-- 📝 Exports directly to Markdown (`.md`)  
-- ⚙️ Easily customizable with templates and data sources  
-- 🔄 Supports automation via CLI or API  
+🤝 Developer collaboration analysis
+
+🔮 Delivery forecasts with Monte Carlo simulations
+
+🔥 Flow metrics: burndown, burn-up, throughput
+
+🌐 Network analysis applied to software engineering
+
+✍️ Data generated in Markdown, allowing you to build dashboards inside your GitHub repositories
+
+💡 Better decisions, powered by data. Simple, visual, and impactful management.
+
+If you believe that “without data, it’s just an opinion”, then meet Reporfy!
