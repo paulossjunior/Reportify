@@ -2,6 +2,8 @@
 
 Reporfy is an advanced reporting tool that transforms GitHub project data into smart dashboards directly inside your repositories. All reports are generated in Markdown, making it lightweight, portable, and fully integrated into your GitHub workflows.
 
+![reportfy](./reportfy_en.png)
+
 ✅ What Reporfy delivers:
 
 * 📊 Productivity reports
