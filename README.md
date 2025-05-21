@@ -4,15 +4,15 @@ Reporfy is an advanced reporting tool that transforms GitHub project data into s
 
 ✅ What Reporfy delivers:
 
-📊 Productivity reports
+* 📊 Productivity reports
 
-🤝 Developer collaboration analysis
+* 🤝 Developer collaboration analysis
 
-🔮 Delivery forecasts with Monte Carlo simulations
+* 🔮 Delivery forecasts with Monte Carlo simulations
 
-🔥 Flow metrics: burndown, burn-up, throughput
+* 🔥 Flow metrics: burndown, burn-up, throughput
 
-🌐 Network analysis applied to software engineering
+* 🌐 Network analysis applied to software engineering
 
 ✍️ Data generated in Markdown, allowing you to build dashboards inside your GitHub repositories
 
