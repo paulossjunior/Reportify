@@ -12,8 +12,8 @@ class AbstractDasboard(BaseModel):
 
     def model_post_init(self, __context):
         load_dotenv()
-        self.repository = os.getenv("GITHUB_REPOSITORY", "")
-        self.token = os.getenv("GITHUB_TOKEN", "")
+        self.repository = os.getenv("REPOSITORY", "")
+        self.token = os.getenv("TOKEN", "")
         self.fetch_data()
 
     def fetch_data(self):
