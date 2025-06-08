@@ -129,6 +129,7 @@ class TeamStats:
         """Processa os dados para análise"""
         if self.members_df.empty or self.issues_df.empty:
             print("⚠️ Dados insuficientes para processamento.")
+            print("Membros: ", len(self.members_df), "Issues:", len(self.issues_df))
             return False
             
         # Processar membros da equipe

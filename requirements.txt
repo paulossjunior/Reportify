@@ -1,3 +1,6 @@
+aiohappyeyeballs==2.6.1
+aiohttp==3.12.6
+aiosignal==1.3.2
 airbyte==0.24.2
 airbyte-api==0.52.2
 airbyte-cdk==6.48.2
@@ -7,6 +10,7 @@ annotated-types==0.7.0
 anyascii==0.3.2
 anyio==4.9.0
 asn1crypto==1.5.1
+async-timeout==5.0.1
 attributes-doc==0.4.0
 attrs==25.3.0
 backoff==2.2.1
@@ -26,6 +30,7 @@ contourpy==1.3.2
 cryptography==44.0.2
 cycler==0.12.1
 dataclasses-json==0.6.7
+discord.py==2.5.2
 dpath==2.2.0
 duckdb==1.2.2
 duckdb_engine==0.13.6
@@ -34,14 +39,19 @@ exceptiongroup==1.2.2
 filelock==3.18.0
 Flask==3.1.0
 fonttools==4.57.0
+frozenlist==1.6.0
 genson==1.3.0
+google-ai-generativelanguage==0.6.15
 google-api-core==2.24.2
+google-api-python-client==2.170.0
 google-auth==2.39.0
+google-auth-httplib2==0.2.0
 google-cloud-bigquery==3.30.0
 google-cloud-bigquery-storage==2.31.0
 google-cloud-core==2.4.3
 google-cloud-secret-manager==2.23.3
 google-crc32c==1.7.1
+google-generativeai==0.8.5
 google-resumable-media==2.7.2
 googleapis-common-protos==1.70.0
 greenlet==3.2.1
@@ -50,6 +60,7 @@ grpcio==1.71.0
 grpcio-status==1.71.0
 h11==0.16.0
 httpcore==1.0.9
+httplib2==0.22.0
 httpx==0.28.1
 idna==3.10
 isodate==0.6.1
@@ -70,6 +81,7 @@ MarkupSafe==3.0.2
 marshmallow==3.26.1
 matplotlib==3.10.1
 mdurl==0.1.2
+multidict==6.4.4
 mypy_extensions==1.1.0
 narwhals==1.37.1
 network==0.1
@@ -83,6 +95,7 @@ pandas==2.2.2
 pillow==11.2.1
 platformdirs==4.3.7
 plotly==6.0.1
+propcache==0.3.1
 proto-plus==1.26.1
 protobuf==5.29.4
 psutil==6.1.0
@@ -133,6 +146,7 @@ typing-inspect==0.9.0
 typing-inspection==0.4.0
 typing_extensions==4.13.2
 tzdata==2025.2
+uritemplate==4.1.1
 url-normalize==2.2.1
 urllib3==2.4.0
 uuid7==0.1.0
@@ -140,3 +154,4 @@ wcmatch==10.0
 Werkzeug==3.1.3
 whenever==0.6.17
 xmltodict==0.14.2
+yarl==1.20.0

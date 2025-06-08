@@ -15,13 +15,14 @@ matplotlib.rcParams['font.sans-serif'] = ['Noto Color Emoji', 'DejaVu Sans']
 
 
 class GitHubIssueStats:
-    def __init__(self):
+    def __init__(self,save_func,report_dir):
         load_dotenv()
         self.repository = os.getenv("GITHUB_REPOSITORY")
         self.token = os.getenv("GITHUB_TOKEN")
         self.issues_df = pd.DataFrame()
         self.monte_carlo_simulations = 1000  # Number of Monte Carlo simulations to run
-
+        self.save_func = save_func
+        self.report_dir = report_dir
     def fetch_issues(self):
         source = ab.get_source(
             "source-github",
@@ -594,10 +595,6 @@ class GitHubIssueStats:
 
         return markdown
 
-    def save_markdown(self, markdown: str, filename: str = "repository_stats.md"):
-        with open(filename, "w") as f:
-            f.write(markdown)
-
     def run(self):
         print("🔄 Buscando issues...")
         self.fetch_issues()
@@ -621,7 +618,6 @@ class GitHubIssueStats:
         # Passando o monte_carlo_results para o método append_weekly_charts_to_markdown
         markdown += self.append_weekly_charts_to_markdown(repo_weekly_data, monte_carlo_results)
         
-        self.save_markdown(markdown)
+        self.save_func(self.report_dir, "repository_stats.md", markdown)
         print("✅ Markdown e gráficos salvos com sucesso!")
-        print("\n📄 Markdown Preview:\n")
-        print(markdown)
+  

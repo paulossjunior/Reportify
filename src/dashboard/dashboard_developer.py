@@ -6,10 +6,13 @@ import base64
 from io import BytesIO
 from dotenv import load_dotenv
 import json
+from datetime import datetime
 
 class DeveloperStats:
-    def __init__(self):
-        load_dotenv()
+    def __init__(self, save_func,save_directory):
+        self.save_func = save_func
+        self.save_directory = save_directory
+        load_dotenv()   
         self.token = os.getenv("GITHUB_TOKEN")
         self.repository = os.getenv("GITHUB_REPOSITORY")  # Ex: 'leds-conectafapes/planner'
         if not self.token or not self.repository:
@@ -37,7 +40,7 @@ class DeveloperStats:
             print("⚠️ Nenhuma issue encontrada.")
             self.issues_df = pd.DataFrame()
     
-    def generate_markdown(self, output_path="developer_stats.md"):
+    def generate_markdown(self, file_name="developer_stats.md"):
         if self.issues_df.empty:
             print("⚠️ Nenhuma issue para processar.")
             return
@@ -189,11 +192,15 @@ class DeveloperStats:
 
             md += "\n---\n\n"
 
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(md)
 
-        print(f"📄 Markdown gerado em: {output_path}")
-    
+
+
+        
+        
+        
+        self.save_func(self.save_directory,'developer_stats.md',md )
+
+
     def run(self):
         self.fetch_issues()
         self.generate_markdown()
