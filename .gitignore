@@ -3,8 +3,18 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
+# extensions
 *.so
+*.md
+
+#Dirs
+charts_burnup/
+charts_monte_carlo/
+organization_charts/
+charts_weekly/
+
+
+
 
 # Distribution / packaging
 .Python
@@ -135,7 +145,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+.python-version
+.venv-source-github
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -150,7 +161,7 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
+.cache/
 # Pyre type checker
 .pyre/
 

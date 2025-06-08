@@ -73,7 +73,7 @@ class OrganizationalDashboard (AbstractDasboard):
         ax2.tick_params(axis='y', labelsize=10)
         ax2.legend(loc="upper right", fontsize=10)
         
-        plt.title("📊 Entregas Quinzenais da Organização", fontsize=14, pad=20)
+        plt.title("Entregas Quinzenais da Organização", fontsize=14, pad=20)
         plt.tight_layout()
         plt.savefig(filename)
         plt.close()
@@ -560,11 +560,7 @@ class OrganizationalDashboard (AbstractDasboard):
         }
 
 
-    def save_markdown(self, markdown: str, filename: str = "organization_stats.md"):
-        """Save markdown report to file."""
-        with open(filename, "w") as f:
-            f.write(markdown)
-        print(f"✅ Markdown salvo em {filename}")
+
 
 
     def run(self):
@@ -581,9 +577,10 @@ class OrganizationalDashboard (AbstractDasboard):
         
         # Generate markdown report
         markdown = self.generate_markdown_report(stats, weekly_data, mc_results)
+        if self.save_func is None:
+            raise ValueError("Função de salvamento não definida. Por favor, forneça uma função de salvamento válida.")
+        self.save_func(self.report_dir, "organization_stats.md", markdown)
+        print("📄 Relatório gerado com sucesso: organization_stats.md")
         
-        # Save results
-        self.save_markdown(markdown)
-
         
         
