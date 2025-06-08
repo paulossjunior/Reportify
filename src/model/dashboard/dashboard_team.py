@@ -8,7 +8,9 @@ from dotenv import load_dotenv
 import json
 
 class TeamStats:
-    def __init__(self):
+    def __init__(self,save_func,report_dir):
+        self.save_func = save_func
+        self.report_dir = report_dir
         load_dotenv()
         self.token = os.getenv("GITHUB_TOKEN")
         self.repository = os.getenv("GITHUB_REPOSITORY")  # Ex: 'leds-conectafapes/planner'
@@ -55,7 +57,7 @@ class TeamStats:
         if "issues" in self.cache:
             self.issues_df = self.cache["issues"].to_pandas()
             print(f"✅ {len(self.issues_df)} issues carregadas.")
-            
+            print(self.cache)
             # Verificar estrutura do DataFrame para debug
             print(f"Colunas das issues: {self.issues_df.columns.tolist()}")
             if "assignee" in self.issues_df.columns:
@@ -452,13 +454,10 @@ class TeamStats:
                 
                 md += "---\n\n"
         
-        # Salvar o arquivo markdown
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(md)
         
-        print(f"📄 Markdown gerado em: {output_path}")
     
     def run(self):
         """Executa todo o processo"""
         self.fetch_data()
-        self.generate_markdown()
+        md = self.generate_markdown()
+        self.save_func(self.report_dir, "team_issue_stats.md",md)

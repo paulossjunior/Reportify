@@ -13,10 +13,12 @@ from collections import defaultdict
 
 
 class CollaborationGraph:
-    def __init__(self):
+    def __init__(self,save_func,report_dir):
         load_dotenv()
         self.token = os.getenv("GITHUB_TOKEN")
         self.repository = os.getenv("GITHUB_REPOSITORY")
+        self.save_func = save_func
+        self.report_dir = report_dir
         if not self.token or not self.repository:
             raise ValueError("Configure GITHUB_TOKEN e GITHUB_REPOSITORY no .env")
         
@@ -529,8 +531,7 @@ class CollaborationGraph:
                 
                 md += "---\n\n"
 
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(md)
+        return md
 
         print(f"📄 Relatório didático de colaboração gerado em: {output_path}")
 
@@ -836,9 +837,9 @@ class CollaborationGraph:
         print(f"🌐 Efeito de mundo pequeno: {is_small_world} (σ = {small_world['sigma']:.2f})")
         
         # Gerar relatórios e visualizações
-        self.generate_markdown("collaboration_report.md")
+        md =  self.generate_markdown("collaboration_report.md")
         self.plot_weighted("collaboration_graph_weighted.png")
         self.plot_communities("collaboration_graph_communities.png")
         self.export_gexf("collaboration_graph.gexf")
         self.generate_html_interactive("collaboration_graph.html")
-
+        self.save_func(self.report_dir,'collaboration_report.md', md)
